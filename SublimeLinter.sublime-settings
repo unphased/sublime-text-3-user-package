@@ -1,0 +1,21 @@
+{
+	"jshint_options": {
+		//"evil": false,
+		//"regexdash": false,
+		"browser": true,
+		"trailing": true, 
+		"sub": true,
+		"strict": false,
+		"newcap": true,
+		"nonew": true,
+		//"quotmark": false,
+		"undef": true,
+		"unused": true,
+		"devel": true,
+		"jquery": true,
+		"node": true,
+		"lastsemic": true,
+		"funcscope": true
+	},
+	"sublimelinter_delay": 0.5
+}

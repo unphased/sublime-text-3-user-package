@@ -1,0 +1,18 @@
+{
+	"installed_packages":
+	[
+		"All Autocomplete",
+		"Move Tabs",
+		"Origami",
+		"Package Control",
+		"SublimeStatusbarPath",
+		"SyncedSideBar",
+		"Theme - Soda",
+		"Toggle words",
+		"ToggleQuotes"
+	],
+	"repositories":
+	[
+		"https://github.com/unphased/SublimeStatusbarPath"
+	]
+}
