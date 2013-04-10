@@ -146,11 +146,11 @@
 			<key>settings</key>
 			<dict>
 				<key>background</key>
-				<string>#F2777A</string>
+				<string>#080808</string>
 				<key>fontStyle</key>
 				<string></string>
 				<key>foreground</key>
-				<string>#2D2D2D</string>
+				<string>#F2777A</string>
 			</dict>
 		</dict>
 		<dict>
@@ -191,7 +191,7 @@
 				<key>foreground</key>
 				<string>#FFFFFF</string>
 			</dict>
-		</dict>				
+		</dict>
 		<dict>
 			<key>name</key>
 			<string>Diff insertion</string>
@@ -226,7 +226,7 @@
 				<key>background</key>
 				<string>#4271ae</string>
 			</dict>
-		</dict>		
+		</dict>
 		<dict>
 			<key>name</key>
 			<string>Diff range</string>

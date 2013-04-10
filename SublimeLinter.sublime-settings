@@ -3,7 +3,7 @@
 		//"evil": false,
 		//"regexdash": false,
 		"browser": true,
-		"trailing": true, 
+		"trailing": true,
 		"sub": true,
 		"strict": false,
 		"newcap": true,
@@ -17,5 +17,10 @@
 		"lastsemic": true,
 		"funcscope": true
 	},
-	"sublimelinter_delay": 0.5
+	"sublimelinter_delay": 0.5,
+
+    "sublimelinter_executable_map":
+    {
+       "python": "/usr/local/share/python/flake8"
+    }
 }
