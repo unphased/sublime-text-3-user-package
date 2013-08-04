@@ -22,5 +22,11 @@
     "sublimelinter_executable_map":
     {
        "python": "/usr/local/share/python/flake8"
-    }
+    },
+
+    // "SublimeLinter": {
+    // 	"Perl": {
+    // 		"lint_args": ["-4"]
+    // 	}
+    // }
 }

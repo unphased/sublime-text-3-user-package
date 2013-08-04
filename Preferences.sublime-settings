@@ -4,11 +4,11 @@
 	"highlight_line": true,
 	"ignored_packages":
 	[
-		"Vintage"
 	],
 	"scroll_past_end": true,
 	"show_tab_close_buttons": false,
 	"theme": "Soda Dark.sublime-theme",
 	"trim_trailing_white_space_on_save": true,
-	"word_wrap": true
+	"word_wrap": true,
+	"vintage_start_in_command_mode": true
 }
