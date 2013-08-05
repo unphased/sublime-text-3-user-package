@@ -1,6 +1,7 @@
 import sublime, sublime_plugin
 
 
+# From http://www.sublimetext.com/forum/viewtopic.php?f=5&t=5513
 class Move_caret_forwardCommand(sublime_plugin.TextCommand):
     def run(self, edit, nlines):
 
