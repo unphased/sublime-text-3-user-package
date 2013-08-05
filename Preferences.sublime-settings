@@ -11,6 +11,7 @@
 	"trim_trailing_white_space_on_save": true,
 	"vintage_start_in_command_mode": true,
 	"caret_style": "phase",
+	"indent_guide_options": ["draw_normal", "draw_active"],
 	"wide_caret": true,
 	"word_wrap": true
 }
