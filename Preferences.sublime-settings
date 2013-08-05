@@ -10,5 +10,7 @@
 	"theme": "Soda Dark.sublime-theme",
 	"trim_trailing_white_space_on_save": true,
 	"vintage_start_in_command_mode": true,
+	"caret_style": "phase",
+	"wide_caret": true,
 	"word_wrap": true
 }
