@@ -1,17 +1,21 @@
 {
+	"caret_style": "phase",
 	"color_scheme": "Packages/User/Tomorrow-Night-Eighties.tmTheme",
 	"font_size": 12,
 	"highlight_line": true,
 	"ignored_packages":
 	[
 	],
+	"indent_guide_options":
+	[
+		"draw_normal",
+		"draw_active"
+	],
 	"scroll_past_end": true,
 	"show_tab_close_buttons": false,
 	"theme": "Soda Dark.sublime-theme",
 	"trim_trailing_white_space_on_save": true,
 	"vintage_start_in_command_mode": true,
-	"caret_style": "phase",
-	"indent_guide_options": ["draw_normal", "draw_active"],
 	"wide_caret": true,
 	"word_wrap": true
 }
