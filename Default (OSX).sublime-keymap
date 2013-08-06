@@ -89,4 +89,9 @@
     { "keys": [";"], "command": "show_overlay", "args": {"overlay": "command_palette", "text": ":"},
 		"context": [{"key": "setting.command_mode"}]
 	},
+	{ "keys": ["enter"], "command": "find_under",
+		"args": {"select_text": false},
+		"context": [{"key": "setting.command_mode"}]
+	},
+	{ "keys": ["`"], "command": "move_to", "args": {"to": "brackets"} }
 ]
