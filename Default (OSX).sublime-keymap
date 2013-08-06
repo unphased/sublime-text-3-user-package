@@ -1,9 +1,7 @@
 [
-	// Enable tab rearrangement
-	{ "keys": ["ctrl+super+["], "command": "move_view_left" },
-	{ "keys": ["ctrl+super+]"], "command": "move_view_right" },
-	{ "keys": ["ctrl+super+left"], "command": "move_view_left" },
-	{ "keys": ["ctrl+super+right"], "command": "move_view_right" },
+	// Enable tab rearrangement (Use this with bettertouchtool for epicness)
+	{ "keys": ["ctrl+super+["], "command": "move_tab", "args": { "position": "-1" } },
+	{ "keys": ["ctrl+super+]"], "command": "move_tab", "args": { "position": "+1" } },
 
 	// for enhancing smart behavior when shift is held down during typing of these wrapper characters
 	{ "keys": ["shift+backspace"], "command": "run_macro_file", "args": {"file": "res://Packages/Default/Delete Left Right.sublime-macro"}, "context":
@@ -46,6 +44,10 @@
         ]
     },
 
+    // F2, F3 maps for switching tabs.
+	{ "keys": ["f2"], "command": "prev_view" },
+	{ "keys": ["f3"], "command": "next_view" },
+
     // VINTAGE MODE MAPS
     { "keys": ["f10"], "command": "exit_insert_mode",
 		"context":
@@ -76,12 +78,15 @@
 			{ "key": "selection_empty", "operator": "equal", "operand": true, "match_all": false },
 			{ "key": "vi_has_input_state" }
 		]
-	},
+	}, // END ESCAPE MAP to F10
     // { "keys": ["ctrl+n"], "command": ""
     { "keys": ["J"], "command": "set_motion", "args": {
     	"motion": "move",
 		"motion_args": {"by": "lines", "forward": true, "extend": true },
 		"linewise": true },
 		"context": [{"key": "setting.command_mode"}]
-    }
+    },
+    { "keys": [";"], "command": "show_overlay", "args": {"overlay": "command_palette", "text": ":"},
+		"context": [{"key": "setting.command_mode"}]
+	},
 ]
