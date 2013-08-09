@@ -48,7 +48,12 @@
 	{ "keys": ["f2"], "command": "prev_view" },
 	{ "keys": ["f3"], "command": "next_view" },
 
-    // VINTAGE MODE MAPS
+    // VINTAGE MODE MAP
+	{ "keys": ["f10"], "command": "hide_auto_complete", "context":
+		[
+			{ "key": "auto_complete_visible", "operator": "equal", "operand": true }
+		]
+	},
     { "keys": ["f10"], "command": "exit_insert_mode",
 		"context":
 		[
@@ -56,19 +61,12 @@
 			{ "key": "setting.is_widget", "operand": false }
 		]
 	},
-
 	{ "keys": ["f10"], "command": "exit_visual_mode",
 		"context":
 		[
 			{ "key": "setting.command_mode"},
 			{ "key": "num_selections", "operand": 1},
 			{ "key": "selection_empty", "operator": "equal", "operand": false, "match_all": false }
-		]
-	},
-
-	{ "keys": ["f10"], "command": "hide_auto_complete", "context":
-		[
-			{ "key": "auto_complete_visible", "operator": "equal", "operand": true }
 		]
 	},
 
