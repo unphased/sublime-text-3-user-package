@@ -280,6 +280,15 @@
         "context": [{"key": "setting.command_mode"}]
     },
 
+    // to address the hole left by overriding b
+    {
+        "keys": ["backspace"], "command": "set_motion", "args": {
+        "motion": "move",
+        "motion_args": {"by": "stops", "word_begin": true, "punct_begin": true, "empty_line": true, "forward": false, "extend": true },
+        "clip_to_line": true },
+        "context": [{"key": "setting.command_mode"}]
+    },
+
     { "keys": ["ctrl+n"], "command": "join_lines", "context": [{"key": "setting.command_mode"}] },
     { "keys": [";"], "command": "show_overlay", "args": {"overlay": "command_palette", "text": ":"},
         "context": [{"key": "setting.command_mode"}]
