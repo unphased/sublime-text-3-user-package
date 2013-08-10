@@ -135,6 +135,7 @@
         },
         "context": [{"key": "setting.command_mode"}]
     },
+
     {
         "keys": ["K"], "command": "run_multiple_commands",
         "args": {
@@ -225,6 +226,7 @@
         },
         "context": [{"key": "setting.command_mode"}]
     },
+
     {
         "keys": ["L"],
         "command": "run_multiple_commands",
@@ -312,5 +314,19 @@
     },
 
     // Mirrors ctrl+m to move to matching bracket
-    { "keys": ["`"], "command": "move_to", "args": {"to": "brackets"} }
+    { "keys": ["`"], "command": "move_to", "args": {"to": "brackets"} },
+
+    // prevents [] in command mode from inserting characters by doing exactly what {} do
+    { "keys": ["["], "command": "set_motion", "args": {
+        "motion": "move",
+        "motion_args": {"by": "stops", "word_begin": false, "empty_line": true, "separators": "", "forward": false, "extend": true }},
+        "context": [{"key": "setting.command_mode"}]
+    },
+
+    { "keys": ["]"], "command": "set_motion", "args": {
+        "motion": "move",
+        "motion_args": {"by": "stops", "word_begin": false, "empty_line": true, "separators": "", "forward": true, "extend": true }},
+        "context": [{"key": "setting.command_mode"}]
+    }
+    // not too easy to type () when in cmd mode so i'll skip binding those
 ]
