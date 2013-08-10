@@ -78,7 +78,11 @@
             { "key": "selection_empty", "operator": "equal", "operand": true, "match_all": false },
             { "key": "vi_has_input_state" }
         ]
-    }, // END ESCAPE MAP to F10
+    },
+    { "keys": ["f10"], "command": "hide_panel", "context":
+        [{"key": "panel", "operand": "find"}, {"key": "panel_has_focus"}]
+    },
+    // END ESCAPE MAP to F10
 
     // Here are the 7j, 7k, 10h, 10l maps I'm used to from vim. Ugly innit?
     {
@@ -259,6 +263,19 @@
             ]
         },
         "context": [{"key": "setting.command_mode"}]
+    }, // END MOVEMENT KEYS
+
+    // More navigation -- this supplants pg up/pg dn (just like i do in vim)
+
+    {
+        "keys": ["b"], "command": "vi_scroll_lines",
+        "args": {"forward": false},
+        "context": [{"key": "setting.command_mode"}]
+    },
+    {
+        "keys": [" "], "command": "vi_scroll_lines",
+        "args": {"forward": true},
+        "context": [{"key": "setting.command_mode"}]
     },
 
     { "keys": ["ctrl+n"], "command": "join_lines", "context": [{"key": "setting.command_mode"}] },
@@ -273,6 +290,12 @@
             {"key": "selection_empty", "operator": "equal", "operand": false, "match_all": false }
         ]
     },
+
+    // this is a hybridized find function that effectively consolidates the search feature to be
+    // fired by the most prominent button (which is appropriate I think) -- begin typing to search,
+    // defaults to searching the word under cursor, mash enter to find other ones of that, etc. Only
+    // weirdness is in if you want to quickly move around after using this to navigate... F10 handles
+    // it though.
     {
         "keys": ["enter"],
         "command": "run_multiple_commands",
