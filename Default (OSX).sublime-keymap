@@ -336,6 +336,9 @@
         "motion": "move",
         "motion_args": {"by": "stops", "word_begin": false, "empty_line": true, "separators": "", "forward": true, "extend": true }},
         "context": [{"key": "setting.command_mode"}]
-    }
+    },
     // not too easy to type () when in cmd mode so i'll skip binding those
+
+    // This one gets you out of wrapping chars {("")}, quite handy
+    { "keys": ["shift+enter"], "command": "move", "args": {"by": "subword_ends", "forward": true} }
 ]
