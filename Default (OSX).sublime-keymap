@@ -310,5 +310,7 @@
         },
         "context": [{"key": "setting.command_mode"}]
     },
+
+    // Mirrors ctrl+m to move to matching bracket
     { "keys": ["`"], "command": "move_to", "args": {"to": "brackets"} }
 ]
