@@ -323,7 +323,7 @@
     },
 
     // Mirrors ctrl+m to move to matching bracket
-    { "keys": ["`"], "command": "move_to", "args": {"to": "brackets"} },
+    { "keys": ["`"], "command": "move_to", "args": {"to": "brackets"}, "context": [{"key": "setting.command_mode"}]},
 
     // prevents [] in command mode from inserting characters by doing exactly what {} do
     { "keys": ["["], "command": "set_motion", "args": {
