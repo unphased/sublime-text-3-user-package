@@ -18,5 +18,5 @@
 	"vintage_start_in_command_mode": true,
 	"wide_caret": true,
 	"word_wrap": true,
-	"save_on_focus_lost": true
+	"save_on_focus_lost": false
 }

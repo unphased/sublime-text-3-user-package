@@ -1,4 +1,5 @@
-import sublime, sublime_plugin
+import sublime
+import sublime_plugin
 
 
 # From http://www.sublimetext.com/forum/viewtopic.php?f=5&t=5513
