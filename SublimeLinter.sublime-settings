@@ -15,7 +15,8 @@
 		"jquery": true,
 		"node": true,
 		"lastsemic": true,
-		"funcscope": true
+		"funcscope": true,
+		"maxlen": 120
 	},
 	"sublimelinter_delay": 0.5,
 
