@@ -340,5 +340,5 @@
     // not too easy to type () when in cmd mode so i'll skip binding those
 
     // This one gets you out of wrapping chars {("")}, quite handy
-    { "keys": ["shift+enter"], "command": "move", "args": {"by": "subword_ends", "forward": true} }
+    { "keys": ["shift+enter"], "command": "move", "args": {"by": "subword_ends", "forward": true}, "context": [{"key": "setting.command_mode"}]}
 ]
