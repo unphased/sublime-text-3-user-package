@@ -83,6 +83,24 @@
         [{"key": "panel", "operand": "find"}, {"key": "panel_has_focus"}]
     },
     // END ESCAPE MAP to F10
+    // save should exit insert mode
+    { "keys": ["super+s"], "command": "run_multiple_commands", "args":
+        {
+            "commands": [
+                {
+                    "command": "save"
+                },
+                {
+                    "command": "exit_insert_mode"
+                }
+            ]
+        },
+        "context":
+        [
+            { "key": "setting.command_mode", "operand": false },
+            { "key": "setting.is_widget", "operand": false }
+        ]
+    },
 
     // Here are the 7j, 7k, 10h, 10l maps I'm used to from vim. Ugly innit?
     {
@@ -341,4 +359,5 @@
 
     // This one gets you out of wrapping chars {("")}, quite handy
     { "keys": ["shift+enter"], "command": "move", "args": {"by": "subword_ends", "forward": true}, "context": [{"key": "setting.command_mode"}]}
+
 ]
