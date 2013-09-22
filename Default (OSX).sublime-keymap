@@ -50,7 +50,7 @@
     { "keys": ["f2"], "command": "prev_view" },
     { "keys": ["f3"], "command": "next_view" },
 
-    // VINTAGE MODE MAP
+    // VINTAGE MODE F10 -> ESCAPE MAP
     { "keys": ["f10"], "command": "hide_auto_complete", "context":
         [
             { "key": "auto_complete_visible", "operator": "equal", "operand": true }
@@ -83,6 +83,53 @@
         [{"key": "panel", "operand": "find"}, {"key": "panel_has_focus"}]
     },
     // END ESCAPE MAP to F10
+
+    // Escape and F10 will exit insert mode as well as hide panel
+    // this addresses the very frustrating behavior where esc/F10 must be pressed twice
+    // only if a completion panel is present (this is a maddeningly subtle difference from YCM)
+    {
+        "keys": ["escape"],
+        "command": "run_multiple_commands",
+        "args": {
+            "commands": [
+                {
+                    "command": "exit_insert_mode"
+                },
+                {
+                    "command": "hide_auto_complete"
+                }
+            ]
+        },
+        "context": [
+            { "key": "auto_complete_visible", "operator": "equal", "operand": true }
+        ]
+    },
+    {
+        "keys": ["f10"],
+        "command": "run_multiple_commands",
+        "args": {
+            "commands": [
+                {
+                    "command": "exit_insert_mode"
+                },
+                {
+                    "command": "hide_auto_complete"
+                }
+            ]
+        },
+        "context": [
+            { "key": "auto_complete_visible", "operator": "equal", "operand": true }
+        ]
+    },
+
+    // this hides the find panel when hitting f10 (escape already does this)
+    {"keys": ["f10"], "command": "hide_panel", "args": {"cancel": true },
+        "context":
+        [
+            { "key": "panel_visible", "operator": "equal", "operand": true }
+        ]
+    },
+
     // save should exit insert mode
     { "keys": ["super+s"], "command": "run_multiple_commands", "args":
         {
