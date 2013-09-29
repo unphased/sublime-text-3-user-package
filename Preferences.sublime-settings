@@ -11,6 +11,7 @@
 		"draw_normal",
 		"draw_active"
 	],
+	"overlay_scroll_bars": "enabled",
 	"save_on_focus_lost": false,
 	"scroll_past_end": true,
 	"show_tab_close_buttons": false,
@@ -19,5 +20,6 @@
 	"vintage_start_in_command_mode": true,
 	"wide_caret": true,
 	"word_wrap": true,
-	"auto_complete_commit_on_tab" : true
+	"auto_complete_commit_on_tab" : true,
+	"ensure_newline_at_eof_on_save": true,
 }
