@@ -154,43 +154,31 @@
         "keys": ["J"], "command": "run_multiple_commands",
         "args": {
             "commands": [
-                {
+                { // 1
                     "command": "set_motion", "args": {
                     "motion": "move",
                     "motion_args": {"by": "lines", "forward": true, "extend": true },
                     "linewise": true }
                 },
-                {
+                { // 2
                     "command": "set_motion", "args": {
                     "motion": "move",
                     "motion_args": {"by": "lines", "forward": true, "extend": true },
                     "linewise": true }
                 },
-                {
+                { // 3
                     "command": "set_motion", "args": {
                     "motion": "move",
                     "motion_args": {"by": "lines", "forward": true, "extend": true },
                     "linewise": true }
                 },
-                {
+                { // 4
                     "command": "set_motion", "args": {
                     "motion": "move",
                     "motion_args": {"by": "lines", "forward": true, "extend": true },
                     "linewise": true }
                 },
-                {
-                    "command": "set_motion", "args": {
-                    "motion": "move",
-                    "motion_args": {"by": "lines", "forward": true, "extend": true },
-                    "linewise": true }
-                },
-                {
-                    "command": "set_motion", "args": {
-                    "motion": "move",
-                    "motion_args": {"by": "lines", "forward": true, "extend": true },
-                    "linewise": true }
-                },
-                {
+                { // 5
                     "command": "set_motion", "args": {
                     "motion": "move",
                     "motion_args": {"by": "lines", "forward": true, "extend": true },
@@ -229,19 +217,7 @@
                     "motion_args": {"by": "lines", "forward": false, "extend": true },
                     "linewise": true }
                 },
-                {
-                    "command": "set_motion", "args": {
-                    "motion": "move",
-                    "motion_args": {"by": "lines", "forward": false, "extend": true },
-                    "linewise": true }
-                },
-                {
-                    "command": "set_motion", "args": {
-                    "motion": "move",
-                    "motion_args": {"by": "lines", "forward": false, "extend": true },
-                    "linewise": true }
-                },
-                {
+                { // 5
                     "command": "set_motion", "args": {
                     "motion": "move",
                     "motion_args": {"by": "lines", "forward": false, "extend": true },
@@ -277,16 +253,7 @@
                 "motion_args": {"forward": false, "extend": true }}},
                 {"command": "set_motion", "args": {
                 "motion": "vi_move_by_characters_in_line",
-                "motion_args": {"forward": false, "extend": true }}},
-                {"command": "set_motion", "args": {
-                "motion": "vi_move_by_characters_in_line",
-                "motion_args": {"forward": false, "extend": true }}},
-                {"command": "set_motion", "args": {
-                "motion": "vi_move_by_characters_in_line",
-                "motion_args": {"forward": false, "extend": true }}},
-                {"command": "set_motion", "args": {
-                "motion": "vi_move_by_characters_in_line",
-                "motion_args": {"forward": false, "extend": true }}},
+                "motion_args": {"forward": false, "extend": true }}}
             ]
         },
         "context": [{"key": "setting.command_mode"}]
@@ -317,16 +284,7 @@
                 "motion_args": {"forward": true, "extend": true }}},
                 {"command": "set_motion", "args": {
                 "motion": "vi_move_by_characters_in_line",
-                "motion_args": {"forward": true, "extend": true }}},
-                {"command": "set_motion", "args": {
-                "motion": "vi_move_by_characters_in_line",
-                "motion_args": {"forward": true, "extend": true }}},
-                {"command": "set_motion", "args": {
-                "motion": "vi_move_by_characters_in_line",
-                "motion_args": {"forward": true, "extend": true }}},
-                {"command": "set_motion", "args": {
-                "motion": "vi_move_by_characters_in_line",
-                "motion_args": {"forward": true, "extend": true }}},
+                "motion_args": {"forward": true, "extend": true }}}
             ]
         },
         "context": [{"key": "setting.command_mode"}]

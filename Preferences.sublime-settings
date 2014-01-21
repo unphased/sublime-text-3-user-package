@@ -1,7 +1,9 @@
 {
+	"auto_complete_commit_on_tab": true,
 	"caret_style": "phase",
 	"color_scheme": "Packages/User/Tomorrow-Night-Eighties.tmTheme",
 	"font_size": 10,
+	"ensure_newline_at_eof_on_save": true,
 	"highlight_line": true,
 	"ignored_packages":
 	[
@@ -16,10 +18,8 @@
 	"scroll_past_end": true,
 	"show_tab_close_buttons": false,
 	"theme": "Soda Dark.sublime-theme",
-	"trim_trailing_white_space_on_save": true,
+	// "trim_trailing_white_space_on_save": true, // noooooo! markdown
 	"vintage_start_in_command_mode": true,
 	"wide_caret": true,
-	"word_wrap": true,
-	"auto_complete_commit_on_tab" : true,
-	"ensure_newline_at_eof_on_save": true,
+	"word_wrap": true
 }
