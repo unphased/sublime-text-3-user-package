@@ -1,0 +1,410 @@
+[
+    // map for word wrap
+    { "keys": ["alt+w"], "command": "toggle_setting", "args": {"setting": "word_wrap"} },
+    // Enable tab rearrangement (Use this with bettertouchtool for epicness)
+    { "keys": ["ctrl+super+["], "command": "move_tab", "args": { "position": "-1" } },
+    { "keys": ["ctrl+super+]"], "command": "move_tab", "args": { "position": "+1" } },
+
+    // for enhancing smart behavior when shift is held down during typing of these wrapper characters
+    { "keys": ["shift+backspace"], "command": "run_macro_file", "args": {"file": "res://Packages/Default/Delete Left Right.sublime-macro"}, "context":
+        [
+            { "key": "setting.auto_match_enabled", "operator": "equal", "operand": true },
+            { "key": "selection_empty", "operator": "equal", "operand": true, "match_all": true },
+            { "key": "preceding_text", "operator": "regex_contains", "operand": "\"$", "match_all": true },
+            { "key": "following_text", "operator": "regex_contains", "operand": "^\"", "match_all": true }
+        ]
+    },
+    { "keys": ["shift+backspace"], "command": "run_macro_file", "args": {"file": "res://Packages/Default/Delete Left Right.sublime-macro"}, "context":
+        [
+            { "key": "setting.auto_match_enabled", "operator": "equal", "operand": true },
+            { "key": "selection_empty", "operator": "equal", "operand": true, "match_all": true },
+            { "key": "preceding_text", "operator": "regex_contains", "operand": "\\($", "match_all": true },
+            { "key": "following_text", "operator": "regex_contains", "operand": "^\\)", "match_all": true }
+        ]
+    },
+    { "keys": ["shift+backspace"], "command": "run_macro_file", "args": {"file": "res://Packages/Default/Delete Left Right.sublime-macro"}, "context":
+        [
+            { "key": "setting.auto_match_enabled", "operator": "equal", "operand": true },
+            { "key": "selection_empty", "operator": "equal", "operand": true, "match_all": true },
+            { "key": "preceding_text", "operator": "regex_contains", "operand": "\\{$", "match_all": true },
+            { "key": "following_text", "operator": "regex_contains", "operand": "^\\}", "match_all": true }
+        ]
+    },
+
+    // for extending togglequotes to use super also
+    { "keys": ["super+'"], "command": "toggle_quotes", "context":
+        [
+            { "key": "setting.auto_match_enabled", "operator": "equal", "operand": true },
+            { "key": "selection_empty", "operator": "equal", "operand": false, "match_all": true }
+        ]
+    },
+    { "keys": ["super+'"], "command": "toggle_quotes", "context":
+        [
+            { "key": "setting.auto_match_enabled", "operator": "equal", "operand": true, "match_all": true },
+            { "key": "selection_empty", "operator": "equal", "operand": true, "match_all": true },
+            { "key": "selector", "operator": "equal", "operand": "string", "match_all": true}
+        ]
+    },
+
+    // F2, F3 maps for switching tabs.
+    { "keys": ["f2"], "command": "prev_view" },
+    { "keys": ["f3"], "command": "next_view" },
+
+    // VINTAGE MODE F10 -> ESCAPE MAP
+    { "keys": ["f10"], "command": "hide_auto_complete", "context":
+        [
+            { "key": "auto_complete_visible", "operator": "equal", "operand": true }
+        ]
+    },
+    { "keys": ["f10"], "command": "exit_insert_mode",
+        "context":
+        [
+            { "key": "setting.command_mode", "operand": false },
+            { "key": "setting.is_widget", "operand": false }
+        ]
+    },
+    { "keys": ["f10"], "command": "exit_visual_mode",
+        "context":
+        [
+            { "key": "setting.command_mode"},
+            { "key": "num_selections", "operand": 1},
+            { "key": "selection_empty", "operator": "equal", "operand": false, "match_all": false }
+        ]
+    },
+
+    { "keys": ["f10"], "command": "vi_cancel_current_action", "context":
+        [
+            { "key": "setting.command_mode" },
+            { "key": "selection_empty", "operator": "equal", "operand": true, "match_all": false },
+            { "key": "vi_has_input_state" }
+        ]
+    },
+    { "keys": ["f10"], "command": "hide_panel", "context":
+        [{"key": "panel", "operand": "find"}, {"key": "panel_has_focus"}]
+    },
+    // END ESCAPE MAP to F10
+
+    // Escape and F10 will exit insert mode as well as hide panel
+    // this addresses the very frustrating behavior where esc/F10 must be pressed twice
+    // only if a completion panel is present (this is a maddeningly subtle difference from YCM)
+    {
+        "keys": ["escape"],
+        "command": "run_multiple_commands",
+        "args": {
+            "commands": [
+                {
+                    "command": "exit_insert_mode"
+                },
+                {
+                    "command": "hide_auto_complete"
+                }
+            ]
+        },
+        "context": [
+            { "key": "auto_complete_visible", "operator": "equal", "operand": true }
+        ]
+    },
+    {
+        "keys": ["f10"],
+        "command": "run_multiple_commands",
+        "args": {
+            "commands": [
+                {
+                    "command": "exit_insert_mode"
+                },
+                {
+                    "command": "hide_auto_complete"
+                }
+            ]
+        },
+        "context": [
+            { "key": "auto_complete_visible", "operator": "equal", "operand": true }
+        ]
+    },
+
+    // this hides the find panel when hitting f10 (escape already does this)
+    {"keys": ["f10"], "command": "hide_panel", "args": {"cancel": true },
+        "context":
+        [
+            { "key": "panel_visible", "operator": "equal", "operand": true }
+        ]
+    },
+
+    // save should exit insert mode
+    { "keys": ["super+s"], "command": "run_multiple_commands", "args":
+        {
+            "commands": [
+                {
+                    "command": "save"
+                },
+                {
+                    "command": "exit_insert_mode"
+                }
+            ]
+        },
+        "context":
+        [
+            { "key": "setting.command_mode", "operand": false },
+            { "key": "setting.is_widget", "operand": false }
+        ]
+    },
+
+    // Here are the 7j, 7k, 10h, 10l maps I'm used to from vim. Ugly innit?
+    {
+        "keys": ["J"], "command": "run_multiple_commands",
+        "args": {
+            "commands": [
+                {
+                    "command": "set_motion", "args": {
+                    "motion": "move",
+                    "motion_args": {"by": "lines", "forward": true, "extend": true },
+                    "linewise": true }
+                },
+                {
+                    "command": "set_motion", "args": {
+                    "motion": "move",
+                    "motion_args": {"by": "lines", "forward": true, "extend": true },
+                    "linewise": true }
+                },
+                {
+                    "command": "set_motion", "args": {
+                    "motion": "move",
+                    "motion_args": {"by": "lines", "forward": true, "extend": true },
+                    "linewise": true }
+                },
+                {
+                    "command": "set_motion", "args": {
+                    "motion": "move",
+                    "motion_args": {"by": "lines", "forward": true, "extend": true },
+                    "linewise": true }
+                },
+                {
+                    "command": "set_motion", "args": {
+                    "motion": "move",
+                    "motion_args": {"by": "lines", "forward": true, "extend": true },
+                    "linewise": true }
+                },
+                {
+                    "command": "set_motion", "args": {
+                    "motion": "move",
+                    "motion_args": {"by": "lines", "forward": true, "extend": true },
+                    "linewise": true }
+                },
+                {
+                    "command": "set_motion", "args": {
+                    "motion": "move",
+                    "motion_args": {"by": "lines", "forward": true, "extend": true },
+                    "linewise": true }
+                }
+            ]
+        },
+        "context": [{"key": "setting.command_mode"}]
+    },
+
+    {
+        "keys": ["K"], "command": "run_multiple_commands",
+        "args": {
+            "commands": [
+                {
+                    "command": "set_motion", "args": {
+                    "motion": "move",
+                    "motion_args": {"by": "lines", "forward": false, "extend": true },
+                    "linewise": true }
+                },
+                {
+                    "command": "set_motion", "args": {
+                    "motion": "move",
+                    "motion_args": {"by": "lines", "forward": false, "extend": true },
+                    "linewise": true }
+                },
+                {
+                    "command": "set_motion", "args": {
+                    "motion": "move",
+                    "motion_args": {"by": "lines", "forward": false, "extend": true },
+                    "linewise": true }
+                },
+                {
+                    "command": "set_motion", "args": {
+                    "motion": "move",
+                    "motion_args": {"by": "lines", "forward": false, "extend": true },
+                    "linewise": true }
+                },
+                {
+                    "command": "set_motion", "args": {
+                    "motion": "move",
+                    "motion_args": {"by": "lines", "forward": false, "extend": true },
+                    "linewise": true }
+                },
+                {
+                    "command": "set_motion", "args": {
+                    "motion": "move",
+                    "motion_args": {"by": "lines", "forward": false, "extend": true },
+                    "linewise": true }
+                },
+                {
+                    "command": "set_motion", "args": {
+                    "motion": "move",
+                    "motion_args": {"by": "lines", "forward": false, "extend": true },
+                    "linewise": true }
+                }
+            ]
+        },
+        "context": [{"key": "setting.command_mode"}]
+    },
+
+    {
+        "keys": ["H"],
+        "command": "run_multiple_commands",
+        "args": {
+            "commands": [
+                {"command": "set_motion", "args": {
+                "motion": "vi_move_by_characters_in_line",
+                "motion_args": {"forward": false, "extend": true }}},
+                {"command": "set_motion", "args": {
+                "motion": "vi_move_by_characters_in_line",
+                "motion_args": {"forward": false, "extend": true }}},
+                {"command": "set_motion", "args": {
+                "motion": "vi_move_by_characters_in_line",
+                "motion_args": {"forward": false, "extend": true }}},
+                {"command": "set_motion", "args": {
+                "motion": "vi_move_by_characters_in_line",
+                "motion_args": {"forward": false, "extend": true }}},
+                {"command": "set_motion", "args": {
+                "motion": "vi_move_by_characters_in_line",
+                "motion_args": {"forward": false, "extend": true }}},
+                {"command": "set_motion", "args": {
+                "motion": "vi_move_by_characters_in_line",
+                "motion_args": {"forward": false, "extend": true }}},
+                {"command": "set_motion", "args": {
+                "motion": "vi_move_by_characters_in_line",
+                "motion_args": {"forward": false, "extend": true }}},
+                {"command": "set_motion", "args": {
+                "motion": "vi_move_by_characters_in_line",
+                "motion_args": {"forward": false, "extend": true }}},
+                {"command": "set_motion", "args": {
+                "motion": "vi_move_by_characters_in_line",
+                "motion_args": {"forward": false, "extend": true }}},
+                {"command": "set_motion", "args": {
+                "motion": "vi_move_by_characters_in_line",
+                "motion_args": {"forward": false, "extend": true }}},
+            ]
+        },
+        "context": [{"key": "setting.command_mode"}]
+    },
+
+    {
+        "keys": ["L"],
+        "command": "run_multiple_commands",
+        "args": {
+            "commands": [
+                {"command": "set_motion", "args": {
+                "motion": "vi_move_by_characters_in_line",
+                "motion_args": {"forward": true, "extend": true }}},
+                {"command": "set_motion", "args": {
+                "motion": "vi_move_by_characters_in_line",
+                "motion_args": {"forward": true, "extend": true }}},
+                {"command": "set_motion", "args": {
+                "motion": "vi_move_by_characters_in_line",
+                "motion_args": {"forward": true, "extend": true }}},
+                {"command": "set_motion", "args": {
+                "motion": "vi_move_by_characters_in_line",
+                "motion_args": {"forward": true, "extend": true }}},
+                {"command": "set_motion", "args": {
+                "motion": "vi_move_by_characters_in_line",
+                "motion_args": {"forward": true, "extend": true }}},
+                {"command": "set_motion", "args": {
+                "motion": "vi_move_by_characters_in_line",
+                "motion_args": {"forward": true, "extend": true }}},
+                {"command": "set_motion", "args": {
+                "motion": "vi_move_by_characters_in_line",
+                "motion_args": {"forward": true, "extend": true }}},
+                {"command": "set_motion", "args": {
+                "motion": "vi_move_by_characters_in_line",
+                "motion_args": {"forward": true, "extend": true }}},
+                {"command": "set_motion", "args": {
+                "motion": "vi_move_by_characters_in_line",
+                "motion_args": {"forward": true, "extend": true }}},
+                {"command": "set_motion", "args": {
+                "motion": "vi_move_by_characters_in_line",
+                "motion_args": {"forward": true, "extend": true }}},
+            ]
+        },
+        "context": [{"key": "setting.command_mode"}]
+    }, // END MOVEMENT KEYS
+
+    // More navigation -- this supplants pg up/pg dn (just like i do in vim)
+
+    {
+        "keys": ["b"], "command": "vi_scroll_lines",
+        "args": {"forward": false},
+        "context": [{"key": "setting.command_mode"}]
+    },
+    {
+        "keys": [" "], "command": "vi_scroll_lines",
+        "args": {"forward": true},
+        "context": [{"key": "setting.command_mode"}]
+    },
+
+    // to address the hole left by overriding b
+    {
+        "keys": ["backspace"], "command": "set_motion", "args": {
+        "motion": "move",
+        "motion_args": {"by": "stops", "word_begin": true, "punct_begin": true, "empty_line": true, "forward": false, "extend": true },
+        "clip_to_line": true },
+        "context": [{"key": "setting.command_mode"}]
+    },
+
+    { "keys": ["ctrl+n"], "command": "join_lines", "context": [{"key": "setting.command_mode"}] },
+    { "keys": [";"], "command": "show_overlay", "args": {"overlay": "command_palette", "text": ":"},
+        "context": [{"key": "setting.command_mode"}]
+    },
+    // fixes being able to insert while having selections
+    { "keys": ["e"], "command": "enter_insert_mode",
+        "context":
+        [
+            {"key": "setting.command_mode"},
+            {"key": "selection_empty", "operator": "equal", "operand": false, "match_all": false }
+        ]
+    },
+
+    // this is a hybridized find function that effectively consolidates the search feature to be
+    // fired by the most prominent button (which is appropriate I think) -- begin typing to search,
+    // defaults to searching the word under cursor, mash enter to find other ones of that, etc. Only
+    // weirdness is in if you want to quickly move around after using this to navigate... F10 handles
+    // it though.
+    {
+        "keys": ["enter"],
+        "command": "run_multiple_commands",
+        "args": {
+            "commands":
+            [
+                {"command": "slurp_find_string", "context": "window"},
+                { "command": "show_panel",
+                  "args": {"panel": "find"},
+                  "context": "window" }
+            ]
+        },
+        "context": [{"key": "setting.command_mode"}]
+    },
+
+    // Mirrors ctrl+m to move to matching bracket
+    { "keys": ["`"], "command": "move_to", "args": {"to": "brackets"}, "context": [{"key": "setting.command_mode"}]},
+
+    // prevents [] in command mode from inserting characters by doing exactly what {} do
+    { "keys": ["["], "command": "set_motion", "args": {
+        "motion": "move",
+        "motion_args": {"by": "stops", "word_begin": false, "empty_line": true, "separators": "", "forward": false, "extend": true }},
+        "context": [{"key": "setting.command_mode"}]
+    },
+
+    { "keys": ["]"], "command": "set_motion", "args": {
+        "motion": "move",
+        "motion_args": {"by": "stops", "word_begin": false, "empty_line": true, "separators": "", "forward": true, "extend": true }},
+        "context": [{"key": "setting.command_mode"}]
+    },
+    // not too easy to type () when in cmd mode so i'll skip binding those
+
+    // This one gets you out of wrapping chars {("")}, quite handy
+    { "keys": ["shift+enter"], "command": "move", "args": {"by": "subword_ends", "forward": true}, "context": [{"key": "setting.command_mode"}]}
+
+]
