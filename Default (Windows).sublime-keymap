@@ -1,4 +1,7 @@
 [
+    // fix this AWFUL thing
+    { "keys": ["ctrl+r"], "command": "redo"},
+
     // map for word wrap
     { "keys": ["alt+w"], "command": "toggle_setting", "args": {"setting": "word_wrap"} },
     // Enable tab rearrangement (Use this with bettertouchtool for epicness)
