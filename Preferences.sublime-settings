@@ -20,5 +20,6 @@
 	"theme": "Soda Dark.sublime-theme",
 	"vintage_start_in_command_mode": true,
 	"wide_caret": true,
-	"word_wrap": true
+	"word_wrap": true,
+	// "vintage_ctrl_keys": true // this blows -- cant use it or lose ctrl+d. But without it ctrl+r is useless.
 }
