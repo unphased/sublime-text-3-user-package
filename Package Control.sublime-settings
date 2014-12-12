@@ -5,6 +5,9 @@
 		"All Autocomplete",
 		"ColorPicker",
 		"CursorRuler",
+		"Markdown Extended",
+		"Markdown Preview",
+		"Monokai Extended",
 		"MoveTab",
 		"Origami",
 		"Package Control",
@@ -12,7 +15,7 @@
 		"SublimeStatusbarPath",
 		"SyncedSideBar",
 		"Theme - Soda",
-		"Toggle words",
+		"Toggle Words",
 		"ToggleQuotes"
 	],
 	"repositories":

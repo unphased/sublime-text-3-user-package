@@ -1,9 +1,9 @@
 {
 	"auto_complete_commit_on_tab": true,
 	"caret_style": "phase",
-	"color_scheme": "Packages/User/Tomorrow-Night-Eighties.tmTheme",
+	"color_scheme": "Packages/Monokai Extended/Monokai Extended.tmTheme",
 	"ensure_newline_at_eof_on_save": true,
-	"font_size": 12,
+	"font_size": 10,
 	"highlight_line": false,
 	"ignored_packages":
 	[
@@ -20,6 +20,5 @@
 	"theme": "Soda Dark.sublime-theme",
 	"vintage_start_in_command_mode": true,
 	"wide_caret": true,
-	"word_wrap": true,
-	// "vintage_ctrl_keys": true // this blows -- cant use it or lose ctrl+d. But without it ctrl+r is useless.
+	"word_wrap": true
 }
