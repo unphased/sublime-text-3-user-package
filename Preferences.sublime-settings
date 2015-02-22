@@ -1,12 +1,14 @@
 {
 	"auto_complete_commit_on_tab": true,
 	"caret_style": "phase",
-	"color_scheme": "Packages/Monokai Extended/Monokai Extended.tmTheme",
+	"color_scheme": "Packages/User/Tomorrow-Night-Eighties.tmTheme",
 	"ensure_newline_at_eof_on_save": true,
 	"font_size": 10,
-	"highlight_line": false,
+	"highlight_line": true,
 	"ignored_packages":
 	[
+		"GitGutter",
+		"HexViewer"
 	],
 	"indent_guide_options":
 	[
